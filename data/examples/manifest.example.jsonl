@@ -1,0 +1,3 @@
+{"document_id":"invoice-vi-001","source_path":"samples/invoice-vi-001.pdf","ground_truth_path":"labels/invoice-vi-001.json","prediction_path":"predictions/invoice-vi-001.json","mode":"json","language":"vi","document_type":"invoice","split":"train","source_family":"synthetic-template-a","license":"project-owned"}
+{"document_id":"receipt-ko-001","source_path":"samples/receipt-ko-001.png","ground_truth_path":"labels/receipt-ko-001.json","prediction_path":"predictions/receipt-ko-001.json","mode":"json","language":"ko","document_type":"receipt","split":"validation","source_family":"synthetic-template-b","license":"project-owned"}
+

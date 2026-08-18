@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://triscan.local/schemas/invoice.schema.json",
+  "title": "Invoice",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "invoice_number": {"type": ["string", "null"]},
+    "invoice_date": {"type": ["string", "null"], "format": "date"},
+    "due_date": {"type": ["string", "null"], "format": "date"},
+    "seller_name": {"type": ["string", "null"]},
+    "seller_tax_id": {"type": ["string", "null"]},
+    "buyer_name": {"type": ["string", "null"]},
+    "buyer_tax_id": {"type": ["string", "null"]},
+    "currency": {"type": ["string", "null"]},
+    "subtotal": {"type": ["number", "null"]},
+    "discount": {"type": ["number", "null"]},
+    "tax": {"type": ["number", "null"]},
+    "total": {"type": ["number", "null"]},
+    "line_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "description": {"type": ["string", "null"]},
+          "quantity": {"type": ["number", "null"]},
+          "unit_price": {"type": ["number", "null"]},
+          "tax": {"type": ["number", "null"]},
+          "amount": {"type": ["number", "null"]}
+        },
+        "required": ["description", "quantity", "unit_price", "tax", "amount"]
+      }
+    }
+  },
+  "required": [
+    "invoice_number",
+    "invoice_date",
+    "due_date",
+    "seller_name",
+    "seller_tax_id",
+    "buyer_name",
+    "buyer_tax_id",
+    "currency",
+    "subtotal",
+    "discount",
+    "tax",
+    "total",
+    "line_items"
+  ]
+}
+

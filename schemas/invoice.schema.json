@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Customizable Invoice",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "invoice_number": {"type": ["string", "null"]},
+    "invoice_date": {"type": ["string", "null"], "format": "date"},
+    "seller_name": {"type": ["string", "null"]},
+    "buyer_name": {"type": ["string", "null"]},
+    "currency": {"type": ["string", "null"]},
+    "subtotal": {"type": ["number", "null"]},
+    "tax": {"type": ["number", "null"]},
+    "total": {"type": ["number", "null"]}
+  },
+  "required": ["invoice_number", "invoice_date", "seller_name", "buyer_name", "currency", "subtotal", "tax", "total"]
+}
+

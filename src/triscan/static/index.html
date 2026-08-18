@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>TriScan — Document Understanding</title>
+    <link rel="stylesheet" href="/assets/app.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div>
+          <strong>TriScan</strong>
+          <small>Document understanding workspace</small>
+        </div>
+      </div>
+      <div class="top-actions">
+        <span class="status-dot" id="health-dot"></span>
+        <span id="health-label">Connecting…</span>
+        <a href="/docs" target="_blank" rel="noreferrer">API docs</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="control-bar" aria-label="Extraction controls">
+        <label>
+          Output
+          <select id="mode">
+            <option value="json">Schema JSON</option>
+            <option value="markdown">Markdown</option>
+          </select>
+        </label>
+        <label>
+          Document type
+          <select id="document-type"></select>
+        </label>
+        <label>
+          Language
+          <select id="language">
+            <option value="auto">Auto detect</option>
+            <option value="ja">Japanese</option>
+            <option value="en">English</option>
+            <option value="vi">Vietnamese</option>
+            <option value="ko">Korean</option>
+          </select>
+        </label>
+        <button id="run-button" class="primary" disabled>
+          <span class="button-label">Run extraction</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+      </section>
+
+      <section class="workspace">
+        <article class="panel document-panel">
+          <header class="panel-header">
+            <div><span class="step">01</span><h2>Document</h2></div>
+            <span class="muted" id="file-meta">No file</span>
+          </header>
+          <div id="drop-zone" class="drop-zone" tabindex="0" role="button">
+            <input id="file-input" type="file" accept=".pdf,.png,.jpg,.jpeg,.webp,.tif,.tiff" hidden />
+            <div class="upload-icon">↑</div>
+            <strong>Drop a document here</strong>
+            <span>PDF, PNG, JPG, WebP or TIFF</span>
+            <button class="secondary" type="button" id="browse-button">Choose file</button>
+          </div>
+          <div id="preview" class="preview hidden"></div>
+          <button id="replace-button" class="text-button hidden" type="button">Replace document</button>
+        </article>
+
+        <article class="panel schema-panel">
+          <header class="panel-header">
+            <div><span class="step">02</span><h2>Schema</h2></div>
+            <button id="reset-schema" class="text-button" type="button">Reset</button>
+          </header>
+          <p class="panel-copy">Edit the JSON Schema sent to the model and used for validation.</p>
+          <textarea id="schema-editor" spellcheck="false" aria-label="JSON Schema"></textarea>
+          <div id="schema-error" class="inline-error" role="alert"></div>
+          <div class="schema-footer">
+            <span id="schema-state">Built-in schema</span>
+            <span>Draft 2020-12</span>
+          </div>
+        </article>
+
+        <article class="panel output-panel">
+          <header class="panel-header">
+            <div><span class="step">03</span><h2>Output</h2></div>
+            <span id="validity-badge" class="badge neutral">Waiting</span>
+          </header>
+          <nav class="tabs" aria-label="Output views">
+            <button class="tab active" data-tab="structured">Structured</button>
+            <button class="tab" data-tab="raw">Raw model output</button>
+            <button class="tab" data-tab="validation">Validation</button>
+          </nav>
+          <div id="empty-output" class="empty-output">
+            <div class="empty-glyph">{ }</div>
+            <strong>Your extraction will appear here</strong>
+            <span>Choose a document, review the schema, then run the pipeline.</span>
+          </div>
+          <pre id="output-code" class="output-code hidden"></pre>
+          <div id="artifact-links" class="artifact-links"></div>
+        </article>
+      </section>
+
+      <section id="message" class="message hidden" role="alert"></section>
+    </main>
+
+    <footer>
+      <span>TriScan runs locally by default. Uploaded documents are stored in the configured runs directory.</span>
+      <span id="model-label"></span>
+    </footer>
+
+    <script src="/assets/app.js" defer></script>
+  </body>
+</html>
+

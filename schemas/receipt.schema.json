@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Customizable Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "merchant_name": {"type": ["string", "null"]},
+    "receipt_number": {"type": ["string", "null"]},
+    "date": {"type": ["string", "null"], "format": "date"},
+    "currency": {"type": ["string", "null"]},
+    "subtotal": {"type": ["number", "null"]},
+    "tax": {"type": ["number", "null"]},
+    "total": {"type": ["number", "null"]}
+  },
+  "required": ["merchant_name", "receipt_number", "date", "currency", "subtotal", "tax", "total"]
+}
+
