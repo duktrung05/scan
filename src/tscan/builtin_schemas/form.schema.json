@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tscan.local/schemas/form.schema.json",
+  "title": "Form",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "title": {"type": ["string", "null"]},
+    "language": {"type": ["string", "null"]},
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "label": {"type": "string"},
+          "value": {"type": ["string", "number", "boolean", "null"]},
+          "section": {"type": ["string", "null"]},
+          "confidence_note": {"type": ["string", "null"]}
+        },
+        "required": ["label", "value", "section", "confidence_note"]
+      }
+    }
+  },
+  "required": ["title", "language", "fields"]
+}
+

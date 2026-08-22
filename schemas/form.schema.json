@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Customizable Form",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "title": {"type": ["string", "null"]},
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "label": {"type": "string"},
+          "value": {"type": ["string", "number", "boolean", "null"]}
+        },
+        "required": ["label", "value"]
+      }
+    }
+  },
+  "required": ["title", "fields"]
+}
+

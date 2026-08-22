@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "native_name": "English",
+      "prompt_profile": "en",
+      "primary_text_metric": "wer"
+    },
+    {
+      "code": "vi",
+      "name": "Vietnamese",
+      "native_name": "Tiếng Việt",
+      "prompt_profile": "vi",
+      "primary_text_metric": "wer"
+    },
+    {
+      "code": "ko",
+      "name": "Korean",
+      "native_name": "한국어",
+      "prompt_profile": "ko",
+      "primary_text_metric": "cer"
+    },
+    {
+      "code": "ja",
+      "name": "Japanese",
+      "native_name": "日本語",
+      "prompt_profile": "ja",
+      "primary_text_metric": "cer"
+    }
+  ]
+}

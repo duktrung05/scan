@@ -1,0 +1,52 @@
+{
+  "generated_on": "2026-08-19",
+  "status": "HOLD",
+  "summary": {
+    "rows": 618,
+    "valid_jsonl_rows": 618,
+    "valid_answer_json_rows": 618,
+    "schema_compatible_answer_rows": 618,
+    "unique_ids": 618,
+    "unique_image_references": 618,
+    "referenced_images_present": 0,
+    "referenced_images_missing": 618
+  },
+  "blocking_reasons": [
+    "The referenced image files were not included with the uploaded JSONL files.",
+    "The license and redistribution status of every source still requires verification."
+  ],
+  "sources": [
+    {
+      "file": "yana_ft_llm_2026_ocr_dataset_images.jsonl",
+      "rows": 260,
+      "bytes": 1906361,
+      "sha256": "77bdf3dbd393cbfb29e8e73cbfb5f02e08ff877650b05c10036fd8117baf11e3",
+      "data_role": "TRAIN_AUX",
+      "split": "train"
+    },
+    {
+      "file": "japanese_docqa_it_images.jsonl",
+      "rows": 238,
+      "bytes": 1600316,
+      "sha256": "b6380624914421cb0481d02a0b1c35ec1a5924c4ad8e6c8fd2fd766878949879",
+      "data_role": "TRAIN_AUX",
+      "split": "train"
+    },
+    {
+      "file": "japan_ocr_mini_benchmark.jsonl",
+      "rows": 39,
+      "bytes": 68876,
+      "sha256": "b9547544836de7a81666f67df177136c1bbd2ca826469cc9a3ce593fa0837a93",
+      "data_role": "EVAL_ONLY",
+      "split": "external_test"
+    },
+    {
+      "file": "jdocqa_dataset.jsonl",
+      "rows": 81,
+      "bytes": 379701,
+      "sha256": "e93833823857ed1a4178582bdb992d83b8c105d1f075bdb49374d0c64ce836ad",
+      "data_role": "TRAIN_AUX",
+      "split": "validation"
+    }
+  ]
+}

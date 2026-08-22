@@ -1,0 +1,12 @@
+services:
+  tscan:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - ./runs:/app/runs
+      - ./schemas:/app/schemas:ro
+    restart: unless-stopped
+

@@ -1,0 +1,15 @@
+version: "1"
+seed: 42
+split:
+  train: 0.8
+  validation: 0.1
+  test: 0.1
+  group_by: source_family
+matrix:
+  - language
+  - document_type
+  - template_family
+  - image_quality
+  - page_scope
+  - schema_seen
+public_benchmarks_are_eval_only: true

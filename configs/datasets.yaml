@@ -1,0 +1,15 @@
+version: "1"
+datasets:
+  - name: example_invoices
+    version: "0.1"
+    task: json_extraction
+    language: vi
+    document_type: invoice
+    template_family: mixed
+    jsonl: ../data/examples/manifest.example.jsonl
+    image_root: ../data/examples
+    schema_id: invoice
+    source: local_example
+    license: verify
+    usage: reject
+    weight: 1.0
